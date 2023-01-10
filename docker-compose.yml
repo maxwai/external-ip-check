@@ -1,0 +1,12 @@
+version: '3.2'
+
+services:
+  local-repo-updater:
+    container_name: ExternalIpCheck
+    build: .
+    restart: "unless-stopped"
+    volumes:
+      - ./appdata:/usr/src/app/appdata
+    environment:
+      - PUID=1000
+      - PGID=1000
